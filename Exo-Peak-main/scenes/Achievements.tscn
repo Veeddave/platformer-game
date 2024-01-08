@@ -1,0 +1,390 @@
+[gd_scene load_steps=55 format=3 uid="uid://d4glxsiot3fyp"]
+
+[ext_resource type="Script" path="res://scripts/menu/achievements.gd" id="1_pum6e"]
+[ext_resource type="Theme" uid="uid://clx7u60ug2yr" path="res://assets/ui/menu_theme.tres" id="2_7daw6"]
+[ext_resource type="FontFile" uid="uid://cir0tli8eewol" path="res://assets/fonts/Asbestos3x5mono.ttf" id="2_ci7m8"]
+[ext_resource type="Texture2D" uid="uid://byqf844qptael" path="res://assets/ui/buttons/button_pressed.png" id="3_0ylwv"]
+[ext_resource type="Texture2D" uid="uid://bmetkrbuwlbrd" path="res://assets/ui/achievement_panel_grey.png" id="4_qinpb"]
+[ext_resource type="Texture2D" uid="uid://blmdoh6guaodf" path="res://assets/ui/buttons/button.png" id="4_x23rd"]
+[ext_resource type="Texture2D" uid="uid://82rc7kufaup8" path="res://assets/ui/buttons/toggle_on.png" id="5_qomdl"]
+[ext_resource type="Texture2D" uid="uid://bynsnbq0lkcus" path="res://assets/ui/buttons/toggle_off.png" id="6_0sklj"]
+[ext_resource type="Texture2D" uid="uid://cos32vqpqqvmn" path="res://assets/ui/slider/grabber.png" id="7_cw3an"]
+[ext_resource type="Texture2D" uid="uid://d2k4xyyey2od7" path="res://assets/ui/settings_background.png" id="8_pxawi"]
+[ext_resource type="Texture2D" uid="uid://dpixffvb8hcsw" path="res://assets/ui/buttons/tab_highlight.png" id="9_e355b"]
+[ext_resource type="Texture2D" uid="uid://dx57p8e4cxw0k" path="res://assets/ui/buttons/tab_selected.png" id="10_k4dig"]
+[ext_resource type="Texture2D" uid="uid://c2dlm5tm5a7po" path="res://assets/ui/buttons/tab.png" id="11_niv1l"]
+[ext_resource type="Texture2D" uid="uid://chmu07k61pnld" path="res://assets/ui/slider/lever_handle.png" id="12_fypml"]
+[ext_resource type="Texture2D" uid="uid://61snay8hbgg0" path="res://assets/ui/buttons/achievements_button_pressed.png" id="14_7hb6o"]
+[ext_resource type="Texture2D" uid="uid://b7dego3glehvs" path="res://assets/ui/buttons/achievements_button.png" id="15_17tcy"]
+[ext_resource type="Texture2D" uid="uid://bm5n5mvpnejqm" path="res://assets/ui/background.png" id="16_ld2be"]
+[ext_resource type="Texture2D" uid="uid://cy5dj854gr0fh" path="res://assets/ui/buttons/quit_button_pressed.png" id="17_idgy7"]
+[ext_resource type="Texture2D" uid="uid://bc2i5f5i3uvj2" path="res://assets/ui/buttons/quit_button.png" id="18_4616k"]
+[ext_resource type="Texture2D" uid="uid://dbhkg655atdpi" path="res://assets/ui/buttons/resume_button_pressed.png" id="19_qtyre"]
+[ext_resource type="Theme" uid="uid://d1m0coh2y5kun" path="res://assets/ui/achievements_theme.tres" id="20_rdx2i"]
+[ext_resource type="Texture2D" uid="uid://txoq5thbryec" path="res://assets/ui/buttons/resume_button.png" id="20_spo36"]
+[ext_resource type="Texture2D" uid="uid://bf2e6xyqv7b50" path="res://assets/ui/checkmark-grey.png" id="22_bkdrs"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fjhny"]
+texture = ExtResource("3_0ylwv")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_at4xu"]
+texture = ExtResource("4_x23rd")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_52wb7"]
+texture = ExtResource("3_0ylwv")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f55e1"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oum5j"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0s6qd"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6s4e5"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_ot47a"]
+color = Color(0.247059, 0.247059, 0.247059, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_l02c5"]
+texture = ExtResource("8_pxawi")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wof5w"]
+bg_color = Color(0.737255, 0, 0.0745098, 1)
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xunxp"]
+bg_color = Color(0, 0.721569, 0.290196, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_h65n5"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f1hmm"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wytsq"]
+texture = ExtResource("9_e355b")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_h4kyc"]
+texture = ExtResource("10_k4dig")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_otlhi"]
+texture = ExtResource("11_niv1l")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gw2ub"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ofoin"]
+bg_color = Color(0.605469, 0.605469, 0.605469, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tefo1"]
+bg_color = Color(0.605469, 0.605469, 0.605469, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_s26n6"]
+texture_margin_left = 13.0
+texture_margin_top = 10.0
+texture_margin_right = 13.0
+texture_margin_bottom = 14.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gh7lo"]
+texture = ExtResource("14_7hb6o")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qqjga"]
+texture = ExtResource("15_17tcy")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_t6pmi"]
+texture = ExtResource("14_7hb6o")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_aqhsg"]
+texture = ExtResource("16_ld2be")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xpjsj"]
+texture = ExtResource("17_idgy7")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ie3c1"]
+texture = ExtResource("18_4616k")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gp7m2"]
+texture = ExtResource("17_idgy7")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_oyml5"]
+texture = ExtResource("19_qtyre")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_b6uvw"]
+texture = ExtResource("20_spo36")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ggki5"]
+texture = ExtResource("19_qtyre")
+
+[sub_resource type="Theme" id="Theme_sgaq5"]
+Button/colors/font_color = Color(0, 0, 0, 1)
+Button/colors/font_focus_color = Color(0, 0, 0, 1)
+Button/colors/font_hover_color = Color(0, 0, 0, 1)
+Button/colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+Button/colors/font_outline_color = Color(1, 1, 1, 0)
+Button/colors/font_pressed_color = Color(0, 0, 0, 1)
+Button/font_sizes/font_size = 5
+Button/fonts/font = ExtResource("2_ci7m8")
+Button/styles/hover = SubResource("StyleBoxTexture_fjhny")
+Button/styles/normal = SubResource("StyleBoxTexture_at4xu")
+Button/styles/pressed = SubResource("StyleBoxTexture_52wb7")
+CheckButton/font_sizes/font_size = 5
+CheckButton/fonts/font = ExtResource("2_ci7m8")
+CheckButton/icons/checked = ExtResource("5_qomdl")
+CheckButton/icons/unchecked = ExtResource("6_0sklj")
+CheckButton/styles/hover = SubResource("StyleBoxFlat_f55e1")
+CheckButton/styles/hover_pressed = SubResource("StyleBoxFlat_oum5j")
+CheckButton/styles/normal = SubResource("StyleBoxFlat_0s6qd")
+CheckButton/styles/pressed = SubResource("StyleBoxFlat_6s4e5")
+HSlider/icons/grabber = ExtResource("7_cw3an")
+HSlider/icons/grabber_disabled = ExtResource("7_cw3an")
+HSlider/icons/grabber_highlight = ExtResource("7_cw3an")
+HSlider/styles/slider = SubResource("StyleBoxLine_ot47a")
+Label/colors/font_color = Color(0, 0, 0, 1)
+Label/colors/font_outline_color = Color(1, 1, 1, 0)
+Label/colors/font_shadow_color = Color(0, 0, 0, 0)
+Label/font_sizes/font_size = 8
+Panel/styles/panel = SubResource("StyleBoxTexture_l02c5")
+ProgressBar/font_sizes/font_size = 5
+ProgressBar/styles/background = SubResource("StyleBoxFlat_wof5w")
+ProgressBar/styles/fill = SubResource("StyleBoxFlat_xunxp")
+ScrollContainer/styles/panel = null
+ScrollContainer/styles/scroll = SubResource("StyleBoxTexture_h65n5")
+TabContainer/constants/side_margin = 3
+TabContainer/font_sizes/font_size = 11
+TabContainer/styles/panel = SubResource("StyleBoxFlat_f1hmm")
+TabContainer/styles/tab_hovered = SubResource("StyleBoxTexture_wytsq")
+TabContainer/styles/tab_selected = SubResource("StyleBoxTexture_h4kyc")
+TabContainer/styles/tab_unselected = SubResource("StyleBoxTexture_otlhi")
+VScrollBar/styles/grabber = SubResource("StyleBoxTexture_gw2ub")
+VSlider/constants/center_grabber = 0
+VSlider/icons/grabber = ExtResource("12_fypml")
+VSlider/icons/grabber_disabled = ExtResource("12_fypml")
+VSlider/icons/grabber_highlight = ExtResource("12_fypml")
+VSlider/styles/grabber_area = SubResource("StyleBoxFlat_ofoin")
+VSlider/styles/grabber_area_highlight = SubResource("StyleBoxFlat_tefo1")
+VSlider/styles/slider = SubResource("StyleBoxTexture_s26n6")
+achievement_button/base_type = &"Button"
+achievement_button/font_sizes/font_size = 5
+achievement_button/fonts/font = ExtResource("2_ci7m8")
+achievement_button/styles/hover = SubResource("StyleBoxTexture_gh7lo")
+achievement_button/styles/normal = SubResource("StyleBoxTexture_qqjga")
+achievement_button/styles/pressed = SubResource("StyleBoxTexture_t6pmi")
+pause_background/base_type = &"Panel"
+pause_background/styles/panel = SubResource("StyleBoxTexture_aqhsg")
+quit_button/base_type = &"Button"
+quit_button/font_sizes/font_size = 11
+quit_button/styles/hover = SubResource("StyleBoxTexture_xpjsj")
+quit_button/styles/normal = SubResource("StyleBoxTexture_ie3c1")
+quit_button/styles/pressed = SubResource("StyleBoxTexture_gp7m2")
+resume_button/base_type = &"Button"
+resume_button/font_sizes/font_size = 11
+resume_button/styles/hover = SubResource("StyleBoxTexture_oyml5")
+resume_button/styles/normal = SubResource("StyleBoxTexture_b6uvw")
+resume_button/styles/pressed = SubResource("StyleBoxTexture_ggki5")
+small_text/base_type = &"Label"
+small_text/font_sizes/font_size = 5
+small_text/fonts/font = ExtResource("2_ci7m8")
+
+[node name="achievements" type="CanvasLayer"]
+process_mode = 3
+script = ExtResource("1_pum6e")
+metadata/_edit_lock_ = true
+
+[node name="Settings_Background" type="Panel" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -104.0
+offset_top = -60.0
+offset_right = 104.0
+offset_bottom = 60.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_7daw6")
+theme_type_variation = &"other_bg"
+
+[node name="settings_label" type="Label" parent="Settings_Background"]
+layout_mode = 0
+offset_left = 50.0
+offset_top = 2.0
+offset_right = 158.0
+offset_bottom = 28.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Achievements"
+vertical_alignment = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+offset_left = 7.0
+offset_top = 27.0
+offset_right = 201.0
+offset_bottom = 99.0
+size_flags_vertical = 3
+theme = ExtResource("20_rdx2i")
+
+[node name="MarginContainer" type="MarginContainer" parent="ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/margin_left = 2
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="achievementList" type="VBoxContainer" parent="ScrollContainer/MarginContainer"]
+custom_minimum_size = Vector2(175, 0)
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("20_rdx2i")
+
+[node name="achievement1" type="HBoxContainer" parent="ScrollContainer/MarginContainer/achievementList"]
+layout_mode = 2
+theme = ExtResource("20_rdx2i")
+
+[node name="Sprite2D" type="Sprite2D" parent="ScrollContainer/MarginContainer/achievementList/achievement1"]
+position = Vector2(-1, 1)
+scale = Vector2(1.02222, 0.97619)
+texture = ExtResource("4_qinpb")
+centered = false
+
+[node name="achievementInfo" type="VBoxContainer" parent="ScrollContainer/MarginContainer/achievementList/achievement1"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("20_rdx2i")
+
+[node name="achievementName" type="Label" parent="ScrollContainer/MarginContainer/achievementList/achievement1/achievementInfo"]
+layout_mode = 2
+theme = SubResource("Theme_sgaq5")
+text = "Crash Landing on Who?"
+
+[node name="achievementDesc" type="Label" parent="ScrollContainer/MarginContainer/achievementList/achievement1/achievementInfo"]
+layout_mode = 2
+theme = SubResource("Theme_sgaq5")
+text = "Beat Stage 1"
+
+[node name="achievementProg" type="ProgressBar" parent="ScrollContainer/MarginContainer/achievementList/achievement1/achievementInfo"]
+clip_contents = true
+layout_mode = 2
+size_flags_vertical = 1
+theme = SubResource("Theme_sgaq5")
+max_value = 1.0
+show_percentage = false
+
+[node name="achievementState" type="Sprite2D" parent="ScrollContainer/MarginContainer/achievementList/achievement1"]
+position = Vector2(163, 21)
+texture = ExtResource("22_bkdrs")
+
+[node name="achievement2" type="HBoxContainer" parent="ScrollContainer/MarginContainer/achievementList"]
+layout_mode = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="ScrollContainer/MarginContainer/achievementList/achievement2"]
+position = Vector2(91.5, 21)
+scale = Vector2(1.01667, 1)
+texture = ExtResource("4_qinpb")
+
+[node name="achievementInfo" type="VBoxContainer" parent="ScrollContainer/MarginContainer/achievementList/achievement2"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("20_rdx2i")
+
+[node name="achievementName" type="Label" parent="ScrollContainer/MarginContainer/achievementList/achievement2/achievementInfo"]
+layout_mode = 2
+theme = SubResource("Theme_sgaq5")
+text = "*Funny Stage 2*"
+
+[node name="achievementDesc" type="Label" parent="ScrollContainer/MarginContainer/achievementList/achievement2/achievementInfo"]
+layout_mode = 2
+theme = SubResource("Theme_sgaq5")
+text = "Beat Stage 2"
+
+[node name="achievementProg" type="ProgressBar" parent="ScrollContainer/MarginContainer/achievementList/achievement2/achievementInfo"]
+layout_mode = 2
+size_flags_vertical = 1
+theme = SubResource("Theme_sgaq5")
+max_value = 1.0
+show_percentage = false
+
+[node name="achievementState" type="Sprite2D" parent="ScrollContainer/MarginContainer/achievementList/achievement2"]
+position = Vector2(163, 18)
+texture = ExtResource("22_bkdrs")
+
+[node name="achievement3" type="HBoxContainer" parent="ScrollContainer/MarginContainer/achievementList"]
+layout_mode = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="ScrollContainer/MarginContainer/achievementList/achievement3"]
+position = Vector2(91.5, 21)
+scale = Vector2(1.01667, 1)
+texture = ExtResource("4_qinpb")
+
+[node name="achievementInfo" type="VBoxContainer" parent="ScrollContainer/MarginContainer/achievementList/achievement3"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="achievementName" type="Label" parent="ScrollContainer/MarginContainer/achievementList/achievement3/achievementInfo"]
+layout_mode = 2
+theme = SubResource("Theme_sgaq5")
+text = "*Funny Stage 3*"
+
+[node name="achievementDesc" type="Label" parent="ScrollContainer/MarginContainer/achievementList/achievement3/achievementInfo"]
+layout_mode = 2
+theme = SubResource("Theme_sgaq5")
+text = "Beat Stage 3"
+
+[node name="achievementProg" type="ProgressBar" parent="ScrollContainer/MarginContainer/achievementList/achievement3/achievementInfo"]
+layout_mode = 2
+theme = SubResource("Theme_sgaq5")
+show_percentage = false
+
+[node name="achievementState" type="Sprite2D" parent="ScrollContainer/MarginContainer/achievementList/achievement3"]
+position = Vector2(163, 18)
+texture = ExtResource("22_bkdrs")
+
+[node name="achievement4" type="HBoxContainer" parent="ScrollContainer/MarginContainer/achievementList"]
+layout_mode = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="ScrollContainer/MarginContainer/achievementList/achievement4"]
+position = Vector2(91.5, 21)
+scale = Vector2(1.01667, 1)
+texture = ExtResource("4_qinpb")
+
+[node name="achievementInfo" type="VBoxContainer" parent="ScrollContainer/MarginContainer/achievementList/achievement4"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="achievementName" type="Label" parent="ScrollContainer/MarginContainer/achievementList/achievement4/achievementInfo"]
+layout_mode = 2
+theme = SubResource("Theme_sgaq5")
+text = "You Jump Good!"
+
+[node name="achievementDesc" type="Label" parent="ScrollContainer/MarginContainer/achievementList/achievement4/achievementInfo"]
+layout_mode = 2
+theme = SubResource("Theme_sgaq5")
+text = "Jump 10 Times"
+
+[node name="achievementProg" type="ProgressBar" parent="ScrollContainer/MarginContainer/achievementList/achievement4/achievementInfo"]
+layout_mode = 2
+theme = SubResource("Theme_sgaq5")
+max_value = 10.0
+show_percentage = false
+
+[node name="achievementState" type="Sprite2D" parent="ScrollContainer/MarginContainer/achievementList/achievement4"]
+position = Vector2(163, 18)
+texture = ExtResource("22_bkdrs")
+
+[node name="Back" type="HBoxContainer" parent="."]
+offset_left = 150.0
+offset_top = 100.0
+offset_right = 198.0
+offset_bottom = 110.0
+
+[node name="returnButton" type="Button" parent="Back"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("2_7daw6")
+theme_type_variation = &"achievement_button"
+text = "Back"
+
+[connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]
+[connection signal="pressed" from="Back/returnButton" to="." method="_on_return_button_pressed"]

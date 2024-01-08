@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://x13nalp2w4sa"]
+
+[ext_resource type="Script" path="res://scripts/game/win.gd" id="1_6n0c1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hdwpg"]
+size = Vector2(61.8125, 47)
+
+[node name="winbox" type="Area2D"]
+collision_layer = 256
+collision_mask = 304
+script = ExtResource("1_6n0c1")
+
+[node name="WinCollision" type="CollisionShape2D" parent="."]
+position = Vector2(29.0938, 8.5)
+shape = SubResource("RectangleShape2D_hdwpg")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

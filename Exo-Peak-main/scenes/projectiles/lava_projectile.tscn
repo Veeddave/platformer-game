@@ -1,0 +1,149 @@
+[gd_scene load_steps=18 format=3 uid="uid://cvlyotm6s1yge"]
+
+[ext_resource type="Script" path="res://scripts/game/bullet.gd" id="1_34vs0"]
+[ext_resource type="Texture2D" uid="uid://ceghm3k4pubpm" path="res://assets/projectiles/lava_projectile.png" id="2_4hyde"]
+[ext_resource type="Script" path="res://scripts/game/lava_projectile.gd" id="3_2lky4"]
+[ext_resource type="Script" path="res://scripts/game/BulletHitbox.gd" id="3_tqaqr"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_abiyr"]
+atlas = ExtResource("2_4hyde")
+region = Rect2(8, 0, 6, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mqecx"]
+atlas = ExtResource("2_4hyde")
+region = Rect2(16, 18, 6, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dxf11"]
+atlas = ExtResource("2_4hyde")
+region = Rect2(0, 18, 6, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wdvkf"]
+atlas = ExtResource("2_4hyde")
+region = Rect2(40, 0, 6, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_unitk"]
+atlas = ExtResource("2_4hyde")
+region = Rect2(32, 0, 6, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_83v0q"]
+atlas = ExtResource("2_4hyde")
+region = Rect2(24, 0, 6, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j51dk"]
+atlas = ExtResource("2_4hyde")
+region = Rect2(16, 0, 6, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cm0nd"]
+atlas = ExtResource("2_4hyde")
+region = Rect2(8, 0, 6, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2x7jd"]
+atlas = ExtResource("2_4hyde")
+region = Rect2(0, 0, 6, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vxy47"]
+atlas = ExtResource("2_4hyde")
+region = Rect2(8, 18, 6, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_g4jcr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_abiyr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mqecx")
+}],
+"loop": false,
+"name": &"1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dxf11")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wdvkf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_unitk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_83v0q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j51dk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cm0nd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mqecx")
+}],
+"loop": false,
+"name": &"grow",
+"speed": 9.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2x7jd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vxy47")
+}],
+"loop": false,
+"name": &"shoot",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cm0nd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mqecx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j51dk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_83v0q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_unitk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wdvkf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dxf11")
+}],
+"loop": false,
+"name": &"shrink",
+"speed": 9.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pc8sm"]
+size = Vector2(1, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3kxch"]
+size = Vector2(3, 4)
+
+[node name="lava_projectile" type="CharacterBody2D" groups=["vertical_projectile"]]
+script = ExtResource("1_34vs0")
+SPEED = 100
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_g4jcr")
+animation = &"shrink"
+offset = Vector2(0, 5)
+script = ExtResource("3_2lky4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_pc8sm")
+
+[node name="BulletHitbox" type="Area2D" parent="." groups=["HitBox", "projectile"]]
+script = ExtResource("3_tqaqr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BulletHitbox"]
+shape = SubResource("RectangleShape2D_3kxch")
+debug_color = Color(0.701961, 0.258824, 0.258824, 0.419608)

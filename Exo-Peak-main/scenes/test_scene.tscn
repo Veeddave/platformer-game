@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://djxvt0oga6c0f"]
+
+[ext_resource type="PackedScene" uid="uid://kmt5elxudxry" path="res://scenes/hard_bounds.tscn" id="2_alyge"]
+[ext_resource type="PackedScene" uid="uid://dqctc0dtuuhkj" path="res://scenes/player.tscn" id="3_yeqv6"]
+[ext_resource type="PackedScene" uid="uid://cpt3hn4i8jl31" path="res://scenes/enemies/enemy_1.tscn" id="4_l7rq7"]
+
+[node name="test_scene" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Game" type="Node2D" parent="."]
+
+[node name="HardBounds" parent="Game" instance=ExtResource("2_alyge")]
+rect = Rect2i(0, 0, 208, 112)
+
+[node name="Player" parent="Game" instance=ExtResource("3_yeqv6")]
+position = Vector2(103, 56)
+
+[node name="enemy_1" parent="Game" instance=ExtResource("4_l7rq7")]
+position = Vector2(68, 101)

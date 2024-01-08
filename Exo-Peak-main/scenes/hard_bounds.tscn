@@ -1,0 +1,31 @@
+[gd_scene load_steps=6 format=3 uid="uid://kmt5elxudxry"]
+
+[ext_resource type="Script" path="res://scripts/game/HardBounds.gd" id="1_o6x0m"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_k6xej"]
+normal = Vector2(1, 0)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_qcpev"]
+normal = Vector2(0, 1)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_nxl6y"]
+normal = Vector2(-1, 0)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_y5tik"]
+
+[node name="HardBounds" type="StaticBody2D"]
+script = ExtResource("1_o6x0m")
+
+[node name="left" type="CollisionShape2D" parent="."]
+shape = SubResource("WorldBoundaryShape2D_k6xej")
+
+[node name="top" type="CollisionShape2D" parent="."]
+shape = SubResource("WorldBoundaryShape2D_qcpev")
+
+[node name="right" type="CollisionShape2D" parent="."]
+position = Vector2(65, 0)
+shape = SubResource("WorldBoundaryShape2D_nxl6y")
+
+[node name="bottom" type="CollisionShape2D" parent="."]
+position = Vector2(0, 65)
+shape = SubResource("WorldBoundaryShape2D_y5tik")

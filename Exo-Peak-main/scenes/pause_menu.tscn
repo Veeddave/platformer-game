@@ -1,0 +1,170 @@
+[gd_scene load_steps=15 format=3 uid="uid://b775uartmpbot"]
+
+[ext_resource type="Script" path="res://scripts/menu/pause_menu.gd" id="1_l0g80"]
+[ext_resource type="Theme" uid="uid://clx7u60ug2yr" path="res://assets/ui/menu_theme.tres" id="1_qljxg"]
+[ext_resource type="Texture2D" uid="uid://dbhkg655atdpi" path="res://assets/ui/buttons/resume_button_pressed.png" id="2_ls6er"]
+[ext_resource type="Texture2D" uid="uid://txoq5thbryec" path="res://assets/ui/buttons/resume_button.png" id="3_jg3xm"]
+[ext_resource type="Texture2D" uid="uid://cy5dj854gr0fh" path="res://assets/ui/buttons/quit_button_pressed.png" id="4_p4lrj"]
+[ext_resource type="Texture2D" uid="uid://bc2i5f5i3uvj2" path="res://assets/ui/buttons/quit_button.png" id="5_o8c8q"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_thh10"]
+texture = ExtResource("2_ls6er")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rigeq"]
+texture = ExtResource("3_jg3xm")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8klmt"]
+texture = ExtResource("2_ls6er")
+
+[sub_resource type="Theme" id="Theme_lus3a"]
+Button/font_sizes/font_size = 11
+Button/styles/hover = SubResource("StyleBoxTexture_thh10")
+Button/styles/normal = SubResource("StyleBoxTexture_rigeq")
+Button/styles/pressed = SubResource("StyleBoxTexture_8klmt")
+Label/colors/font_color = Color(0, 0, 0, 1)
+Label/colors/font_outline_color = Color(1, 1, 1, 0)
+Label/colors/font_shadow_color = Color(0, 0, 0, 0)
+Label/constants/line_spacing = 2
+Label/font_sizes/font_size = 10
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jfekq"]
+texture = ExtResource("4_p4lrj")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_blpjd"]
+texture = ExtResource("5_o8c8q")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ryim1"]
+texture = ExtResource("4_p4lrj")
+
+[sub_resource type="Theme" id="Theme_g2aej"]
+Button/font_sizes/font_size = 11
+Button/styles/hover = SubResource("StyleBoxTexture_jfekq")
+Button/styles/normal = SubResource("StyleBoxTexture_blpjd")
+Button/styles/pressed = SubResource("StyleBoxTexture_ryim1")
+Label/colors/font_color = Color(0, 0, 0, 1)
+Label/colors/font_outline_color = Color(1, 1, 1, 0)
+Label/colors/font_shadow_color = Color(0, 0, 0, 0)
+Label/constants/line_spacing = 2
+Label/font_sizes/font_size = 10
+
+[node name="Pause_Menu" type="CanvasLayer"]
+process_mode = 3
+script = ExtResource("1_l0g80")
+
+[node name="Pause_Background" type="Panel" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -104.0
+offset_top = -58.0
+offset_right = 104.0
+offset_bottom = 58.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_qljxg")
+theme_type_variation = &"pause_background"
+
+[node name="pause_label" type="Label" parent="Pause_Background"]
+layout_mode = 2
+offset_left = 114.0
+offset_top = 2.0
+offset_right = 168.0
+offset_bottom = 28.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Pause"
+
+[node name="Primary Buttons" type="VBoxContainer" parent="Pause_Background"]
+layout_mode = 0
+offset_left = 30.0
+offset_top = 14.0
+offset_right = 80.0
+offset_bottom = 105.0
+
+[node name="save_button" type="Button" parent="Pause_Background/Primary Buttons"]
+custom_minimum_size = Vector2(48, 10)
+layout_mode = 2
+theme = ExtResource("1_qljxg")
+text = "Save"
+
+[node name="checkpoint_button" type="Button" parent="Pause_Background/Primary Buttons"]
+custom_minimum_size = Vector2(48, 10)
+layout_mode = 2
+text = "Checkpoint"
+
+[node name="settings_button" type="Button" parent="Pause_Background/Primary Buttons"]
+custom_minimum_size = Vector2(48, 10)
+layout_mode = 2
+theme = ExtResource("1_qljxg")
+text = "Settings"
+
+[node name="Resume" type="HBoxContainer" parent="Pause_Background"]
+layout_mode = 0
+offset_left = 108.0
+offset_top = 72.0
+offset_right = 134.0
+offset_bottom = 98.0
+
+[node name="resume_button" type="Button" parent="Pause_Background/Resume"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("1_qljxg")
+theme_type_variation = &"resume_button"
+icon_alignment = 1
+
+[node name="resume_label" type="Label" parent="Pause_Background/Resume/resume_button"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 27.0
+offset_right = 49.0
+offset_bottom = 43.0
+theme = SubResource("Theme_lus3a")
+theme_type_variation = &"small_text"
+theme_override_font_sizes/font_size = 5
+text = "Resume"
+
+[node name="TitleScreen" type="HBoxContainer" parent="Pause_Background"]
+layout_mode = 0
+offset_left = 144.0
+offset_top = 72.0
+offset_right = 170.0
+offset_bottom = 98.0
+
+[node name="returnButton" type="Button" parent="Pause_Background/TitleScreen"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("1_qljxg")
+theme_type_variation = &"quit_button"
+
+[node name="returnButton" type="Label" parent="Pause_Background/TitleScreen/returnButton"]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 27.0
+offset_right = 36.0
+offset_bottom = 43.0
+theme = SubResource("Theme_g2aej")
+theme_type_variation = &"small_text"
+theme_override_font_sizes/font_size = 5
+text = "Title"
+
+[node name="Achievments" type="HBoxContainer" parent="Pause_Background"]
+layout_mode = 0
+offset_left = 103.0
+offset_top = 56.0
+offset_right = 173.0
+offset_bottom = 64.0
+
+[node name="achievements_button" type="Button" parent="Pause_Background/Achievments"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("1_qljxg")
+theme_type_variation = &"achievement_button"
+text = "Achievements"
+
+[connection signal="pressed" from="Pause_Background/Primary Buttons/save_button" to="." method="_on_save_button_pressed"]
+[connection signal="pressed" from="Pause_Background/Primary Buttons/checkpoint_button" to="." method="_on_reset_level_button_pressed"]
+[connection signal="pressed" from="Pause_Background/Primary Buttons/settings_button" to="." method="_on_settings_button_pressed"]
+[connection signal="pressed" from="Pause_Background/Resume/resume_button" to="." method="_on_resume_button_pressed"]
+[connection signal="pressed" from="Pause_Background/TitleScreen/returnButton" to="." method="_on_return_button_pressed"]
+[connection signal="pressed" from="Pause_Background/Achievments/achievements_button" to="." method="_on_achievements_button_pressed"]

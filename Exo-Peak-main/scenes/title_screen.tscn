@@ -1,0 +1,120 @@
+[gd_scene load_steps=6 format=3 uid="uid://wctwydaslxgf"]
+
+[ext_resource type="FontFile" uid="uid://cir0tli8eewol" path="res://assets/fonts/Asbestos3x5mono.ttf" id="1_qjsas"]
+[ext_resource type="Script" path="res://scripts/menu/title_screen.gd" id="2_4d3ss"]
+[ext_resource type="Texture2D" uid="uid://btrwt6vtro3ll" path="res://assets/ui/Menu_Page.png" id="2_qtp67"]
+[ext_resource type="AudioStream" uid="uid://cflfv68ha4tcw" path="res://assets/audio/music/MainMenuTrack.wav" id="4_ho6ju"]
+
+[sub_resource type="Theme" id="Theme_t210o"]
+default_font = ExtResource("1_qjsas")
+default_font_size = 5
+
+[node name="Title_Screen" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_t210o")
+script = ExtResource("2_4d3ss")
+metadata/_edit_lock_ = true
+
+[node name="MenuPage" type="Sprite2D" parent="."]
+position = Vector2(104, 60)
+texture = ExtResource("2_qtp67")
+
+[node name="Game title" type="Label" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 69.0
+offset_top = 6.0
+offset_right = 709.0
+offset_bottom = 153.0
+scale = Vector2(0.210957, 0.210957)
+theme_override_colors/font_color = Color(0, 0.662745, 0.670588, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 12
+theme_override_font_sizes/font_size = 100
+text = "Exo-Peak"
+
+[node name="LeftPanel" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 42.0
+offset_right = 69.0
+offset_bottom = 117.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="LeftPanel"]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 6.0
+offset_right = 49.0
+offset_bottom = 50.0
+
+[node name="PlayButton" type="Button" parent="LeftPanel/VBoxContainer"]
+layout_mode = 2
+text = "Play"
+metadata/_edit_lock_ = true
+
+[node name="playModes" type="Panel" parent="LeftPanel/VBoxContainer/PlayButton"]
+visible = false
+layout_mode = 0
+offset_left = 61.0
+offset_top = -6.0
+offset_right = 125.0
+offset_bottom = 53.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="LeftPanel/VBoxContainer/PlayButton/playModes"]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 5.0
+offset_right = 60.0
+offset_bottom = 49.0
+
+[node name="newGame" type="Button" parent="LeftPanel/VBoxContainer/PlayButton/playModes/VBoxContainer"]
+layout_mode = 2
+text = "New Game"
+metadata/_edit_lock_ = true
+
+[node name="loadGame" type="Button" parent="LeftPanel/VBoxContainer/PlayButton/playModes/VBoxContainer"]
+layout_mode = 2
+text = "Load Game
+"
+metadata/_edit_lock_ = true
+
+[node name="backButton" type="Button" parent="LeftPanel/VBoxContainer/PlayButton/playModes/VBoxContainer"]
+layout_mode = 2
+text = "Back
+"
+metadata/_edit_lock_ = true
+
+[node name="SettingsButton" type="Button" parent="LeftPanel/VBoxContainer"]
+layout_mode = 2
+text = "Settings
+"
+metadata/_edit_lock_ = true
+
+[node name="AchievementsButton" type="Button" parent="LeftPanel/VBoxContainer"]
+layout_mode = 2
+text = "Achievements"
+metadata/_edit_lock_ = true
+
+[node name="QuitButton" type="Button" parent="LeftPanel/VBoxContainer"]
+layout_mode = 2
+text = "Quit Game"
+metadata/_edit_lock_ = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_ho6ju")
+autoplay = true
+bus = &"Music"
+
+[connection signal="pressed" from="LeftPanel/VBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="LeftPanel/VBoxContainer/PlayButton/playModes/VBoxContainer/newGame" to="." method="_on_new_game_pressed"]
+[connection signal="pressed" from="LeftPanel/VBoxContainer/PlayButton/playModes/VBoxContainer/loadGame" to="." method="_on_load_game_pressed"]
+[connection signal="pressed" from="LeftPanel/VBoxContainer/PlayButton/playModes/VBoxContainer/backButton" to="." method="_on_back_button_pressed"]
+[connection signal="pressed" from="LeftPanel/VBoxContainer/SettingsButton" to="." method="_on_settings_button_pressed"]
+[connection signal="pressed" from="LeftPanel/VBoxContainer/AchievementsButton" to="." method="_on_achievements_button_pressed"]
+[connection signal="pressed" from="LeftPanel/VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]

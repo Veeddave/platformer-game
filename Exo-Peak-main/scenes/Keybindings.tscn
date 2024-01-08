@@ -1,0 +1,180 @@
+[gd_scene load_steps=11 format=3 uid="uid://bypjga7s1ssys"]
+
+[ext_resource type="Script" path="res://scripts/menu/keybindings.gd" id="1_dtv6d"]
+[ext_resource type="Theme" uid="uid://clx7u60ug2yr" path="res://assets/ui/menu_theme.tres" id="2_oluh7"]
+[ext_resource type="FontFile" uid="uid://cir0tli8eewol" path="res://assets/fonts/Asbestos3x5mono.ttf" id="3_p7g7f"]
+
+[sub_resource type="Theme" id="Theme_ity0d"]
+Label/colors/font_color = Color(1, 1, 1, 1)
+Label/font_sizes/font_size = 10
+
+[sub_resource type="Theme" id="Theme_4wjt1"]
+Button/colors/font_color = Color(0, 0, 0, 1)
+Button/colors/font_focus_color = Color(0, 0, 0, 1)
+Button/colors/font_hover_color = Color(0, 0, 0, 1)
+Button/colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+Button/colors/font_outline_color = Color(1, 1, 1, 0)
+Button/colors/font_pressed_color = Color(0, 0, 0, 1)
+Button/font_sizes/font_size = 8
+Button/fonts/font = ExtResource("3_p7g7f")
+
+[sub_resource type="Theme" id="Theme_ajtqt"]
+Label/font_sizes/font_size = 8
+
+[sub_resource type="Theme" id="Theme_k1gkk"]
+Button/font_sizes/font_size = 8
+Button/fonts/font = ExtResource("3_p7g7f")
+
+[sub_resource type="Theme" id="Theme_77rp8"]
+Button/font_sizes/font_size = 8
+Button/fonts/font = ExtResource("3_p7g7f")
+
+[sub_resource type="Theme" id="Theme_4ykej"]
+Button/font_sizes/font_size = 8
+Button/fonts/font = ExtResource("3_p7g7f")
+
+[sub_resource type="Theme" id="Theme_b8bbk"]
+Button/font_sizes/font_size = 8
+Button/fonts/font = ExtResource("3_p7g7f")
+
+[node name="Keybindings" type="CanvasLayer"]
+process_mode = 3
+script = ExtResource("1_dtv6d")
+
+[node name="Settings_Background" type="Panel" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -104.0
+offset_top = -60.0
+offset_right = 104.0
+offset_bottom = 60.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_oluh7")
+
+[node name="PanelContainer" type="PanelContainer" parent="Settings_Background"]
+layout_mode = 0
+offset_left = 73.0
+offset_top = 99.0
+offset_right = 141.0
+offset_bottom = 114.0
+
+[node name="Label" type="Label" parent="Settings_Background/PanelContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+theme = SubResource("Theme_ity0d")
+text = "Press any key"
+
+[node name="keybindings_label" type="Label" parent="Settings_Background"]
+layout_mode = 2
+offset_left = 61.0
+offset_top = -2.0
+offset_right = 154.0
+offset_bottom = 24.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Keybindings"
+vertical_alignment = 1
+
+[node name="jump" type="Button" parent="Settings_Background"]
+layout_mode = 0
+offset_left = 43.0
+offset_top = 25.0
+offset_right = 80.0
+offset_bottom = 38.0
+theme = SubResource("Theme_4wjt1")
+text = "Jump"
+
+[node name="label_jump" type="Label" parent="Settings_Background"]
+layout_mode = 0
+offset_left = 90.0
+offset_top = 25.0
+offset_right = 102.0
+offset_bottom = 37.0
+theme = SubResource("Theme_ajtqt")
+
+[node name="move_up" type="Button" parent="Settings_Background"]
+layout_mode = 0
+offset_left = 43.0
+offset_top = 40.0
+offset_right = 80.0
+offset_bottom = 53.0
+theme = SubResource("Theme_k1gkk")
+text = "Up"
+
+[node name="label_move_up" type="Label" parent="Settings_Background"]
+layout_mode = 0
+offset_left = 90.0
+offset_top = 40.0
+offset_right = 102.0
+offset_bottom = 52.0
+theme = SubResource("Theme_ajtqt")
+
+[node name="move_left" type="Button" parent="Settings_Background"]
+layout_mode = 0
+offset_left = 43.0
+offset_top = 55.0
+offset_right = 80.0
+offset_bottom = 68.0
+theme = SubResource("Theme_77rp8")
+text = "Left"
+
+[node name="label_move_left" type="Label" parent="Settings_Background"]
+layout_mode = 0
+offset_left = 90.0
+offset_top = 55.0
+offset_right = 102.0
+offset_bottom = 67.0
+theme = SubResource("Theme_ajtqt")
+
+[node name="move_down" type="Button" parent="Settings_Background"]
+layout_mode = 0
+offset_left = 43.0
+offset_top = 70.0
+offset_right = 80.0
+offset_bottom = 83.0
+theme = SubResource("Theme_4ykej")
+text = "Down"
+
+[node name="label_move_down" type="Label" parent="Settings_Background"]
+layout_mode = 0
+offset_left = 90.0
+offset_top = 70.0
+offset_right = 102.0
+offset_bottom = 82.0
+theme = SubResource("Theme_ajtqt")
+
+[node name="move_right" type="Button" parent="Settings_Background"]
+layout_mode = 0
+offset_left = 43.0
+offset_top = 85.0
+offset_right = 80.0
+offset_bottom = 98.0
+theme = SubResource("Theme_b8bbk")
+text = "Right"
+
+[node name="label_move_right" type="Label" parent="Settings_Background"]
+layout_mode = 0
+offset_left = 90.0
+offset_top = 85.0
+offset_right = 102.0
+offset_bottom = 97.0
+theme = SubResource("Theme_ajtqt")
+
+[node name="Back" type="HBoxContainer" parent="Settings_Background"]
+layout_mode = 0
+offset_left = 25.0
+offset_top = 6.0
+offset_right = 53.0
+offset_bottom = 16.0
+
+[node name="returnToSettings" type="Button" parent="Settings_Background/Back"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("2_oluh7")
+theme_type_variation = &"achievement_button"
+text = "Back"
+
+[connection signal="pressed" from="Settings_Background/Back/returnToSettings" to="." method="_on_return_to_settings_pressed"]

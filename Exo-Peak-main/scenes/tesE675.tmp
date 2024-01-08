@@ -1,0 +1,67 @@
+[gd_scene load_steps=13 format=3 uid="uid://djxvt0oga6c0f"]
+
+[ext_resource type="PackedScene" uid="uid://kmt5elxudxry" path="res://scenes/hard_bounds.tscn" id="2_alyge"]
+[ext_resource type="PackedScene" uid="uid://dqctc0dtuuhkj" path="res://scenes/player.tscn" id="3_yeqv6"]
+[ext_resource type="PackedScene" uid="uid://cpt3hn4i8jl31" path="res://scenes/enemies/enemy_1.tscn" id="4_l7rq7"]
+[ext_resource type="PackedScene" uid="uid://klqqq2nbtmt8" path="res://scenes/enemies/enemy_2.tscn" id="5_wk1uu"]
+[ext_resource type="PackedScene" uid="uid://cc2hf56hmjw64" path="res://scenes/enemies/enemy_3.tscn" id="6_jnfd2"]
+[ext_resource type="PackedScene" uid="uid://cchwhjpduh7u" path="res://scenes/enemies/enemy_4.tscn" id="7_vvncd"]
+[ext_resource type="PackedScene" uid="uid://b4x333a6irhn5" path="res://scenes/enemies/enemy_5.tscn" id="8_l666t"]
+[ext_resource type="PackedScene" uid="uid://dkniw6wtuh1g" path="res://scenes/enemies/enemy_6.tscn" id="9_gr8kc"]
+[ext_resource type="PackedScene" uid="uid://dwoymt4o3cfyb" path="res://scenes/enemies/enemy_7.tscn" id="10_24n1h"]
+[ext_resource type="PackedScene" uid="uid://trj1mo1f0c5p" path="res://scenes/enemies/enemy_8.tscn" id="11_f6hxg"]
+[ext_resource type="PackedScene" uid="uid://pp62gpsguxwb" path="res://scenes/enemies/enemy_9.tscn" id="12_ilur7"]
+[ext_resource type="PackedScene" uid="uid://dewu0vax2bhia" path="res://scenes/enemies/enemy_10.tscn" id="13_bgok2"]
+
+[node name="test_scene" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Game" type="Node2D" parent="."]
+
+[node name="HardBounds" parent="Game" instance=ExtResource("2_alyge")]
+rect = Rect2i(0, 0, 208, 112)
+
+[node name="Player" parent="Game" instance=ExtResource("3_yeqv6")]
+position = Vector2(172, 96)
+
+[node name="enemy_1" parent="Game" instance=ExtResource("4_l7rq7")]
+visible = false
+position = Vector2(68, 101)
+SPEED = 125.0
+FALL_STRENGTH = 500.0
+GRAVITY = 375.0
+ACCELERATION = 0.5
+FRICTION = 0.5
+
+[node name="enemy_2" parent="Game" instance=ExtResource("5_wk1uu")]
+visible = false
+position = Vector2(26, 102)
+
+[node name="enemy_3" parent="Game" instance=ExtResource("6_jnfd2")]
+visible = false
+
+[node name="enemy_4" parent="Game" instance=ExtResource("7_vvncd")]
+visible = false
+
+[node name="enemy_5" parent="Game" instance=ExtResource("8_l666t")]
+visible = false
+
+[node name="enemy_6" parent="Game" instance=ExtResource("9_gr8kc")]
+visible = false
+
+[node name="enemy_7" parent="Game" instance=ExtResource("10_24n1h")]
+visible = false
+
+[node name="enemy_8" parent="Game" instance=ExtResource("11_f6hxg")]
+visible = false
+
+[node name="enemy_9" parent="Game" instance=ExtResource("12_ilur7")]
+visible = false
+
+[node name="enemy_10" parent="Game" instance=ExtResource("13_bgok2")]
+visible = false

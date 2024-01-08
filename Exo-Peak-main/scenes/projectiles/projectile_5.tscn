@@ -1,0 +1,28 @@
+[gd_scene load_steps=6 format=3 uid="uid://0cmvs1w0vny3"]
+
+[ext_resource type="Script" path="res://scripts/game/bullet.gd" id="1_r1tu1"]
+[ext_resource type="Texture2D" uid="uid://bnnutyq2sov5g" path="res://assets/projectiles/enemy_projectile_1.png" id="2_ymduc"]
+[ext_resource type="Script" path="res://scripts/game/BulletHitbox.gd" id="4_x2wf6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pc8sm"]
+size = Vector2(1, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3kxch"]
+size = Vector2(4, 4)
+
+[node name="projectile_5" type="CharacterBody2D"]
+script = ExtResource("1_r1tu1")
+SPEED = 150
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_ymduc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_pc8sm")
+
+[node name="BulletHitbox" type="Area2D" parent="." groups=["HitBox", "enemy_projectile", "projectile"]]
+script = ExtResource("4_x2wf6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BulletHitbox"]
+shape = SubResource("RectangleShape2D_3kxch")
+debug_color = Color(0.701961, 0.258824, 0.258824, 0.419608)

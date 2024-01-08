@@ -1,0 +1,73 @@
+[gd_scene load_steps=11 format=3 uid="uid://dcm7vtiq8f124"]
+
+[ext_resource type="Script" path="res://scripts/game/bullet.gd" id="1_7shr2"]
+[ext_resource type="Texture2D" uid="uid://idg41662jtjq" path="res://assets/projectiles/enemy_projectiles.png" id="2_h0iwi"]
+[ext_resource type="Script" path="res://scripts/game/enemy_projectile.gd" id="3_l5qn4"]
+[ext_resource type="Script" path="res://scripts/game/BulletHitbox.gd" id="4_ehfcb"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mtfna"]
+atlas = ExtResource("2_h0iwi")
+region = Rect2(0, 19, 12, 4)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_75ukw"]
+atlas = ExtResource("2_h0iwi")
+region = Rect2(13, 19, 12, 4)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_260bn"]
+atlas = ExtResource("2_h0iwi")
+region = Rect2(26, 19, 12, 4)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_d8wxg"]
+animations = [{
+"frames": [{
+"duration": 0.25,
+"texture": SubResource("AtlasTexture_mtfna")
+}, {
+"duration": 0.25,
+"texture": SubResource("AtlasTexture_75ukw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_260bn")
+}],
+"loop": false,
+"name": &"grow",
+"speed": 9.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_75ukw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_260bn")
+}],
+"loop": false,
+"name": &"shoot",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pc8sm"]
+size = Vector2(1, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3kxch"]
+size = Vector2(4, 4)
+
+[node name="projectile_2" type="CharacterBody2D"]
+script = ExtResource("1_7shr2")
+SPEED = 150
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-2, 0)
+sprite_frames = SubResource("SpriteFrames_d8wxg")
+animation = &"shoot"
+offset = Vector2(-2, 0)
+script = ExtResource("3_l5qn4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_pc8sm")
+
+[node name="BulletHitbox" type="Area2D" parent="." groups=["HitBox", "enemy_projectile", "projectile"]]
+script = ExtResource("4_ehfcb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BulletHitbox"]
+shape = SubResource("RectangleShape2D_3kxch")
+debug_color = Color(0.701961, 0.258824, 0.258824, 0.419608)
